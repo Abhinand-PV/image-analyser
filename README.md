@@ -52,15 +52,27 @@ Your browser should automatically open to `http://localhost:8501`. From there, u
 
 ## See It in Action
 
-*(Note: The images below use standard Markdown formatting to render as actual pictures on GitHub. For them to show up instead of appearing as broken links, please ensure you save your screenshot files into an `assets` folder in this repository before pushing!)*
+*(Note: The images below use standard Markdown formatting to render as actual pictures on GitHub!)*
 
 ### 1. The Main Interface
 ![Application Interface](assets/interface-screenshot.png)
 
-### 2. Extracting Data from Documents
-![Structured Data Extraction](assets/data-extraction-screenshot.png)
+### 2. Image Description in Action
+See how the model breaks down the visual elements of a document into a comprehensive textual description:
 
-### 3. Deep Dive: Stock Chart Analysis
+![Image Description 1](assets/image-description-1.png)
+![Image Description 2](assets/image-description-2.png)
+![Image Description 3](assets/image-description-3.png)
+![Image Description 4](assets/image-description-4.png)
+
+### 3. Extracting Data from Documents
+Watch as the tool pulls structured JSON data directly from a scanned fee receipt:
+
+![Structured Data Extraction 1](assets/data-extraction-1.png)
+![Structured Data Extraction 2](assets/data-extraction-2.png)
+![Structured Data Extraction 3](assets/data-extraction-3.png)
+
+### 4. Deep Dive: Stock Chart Analysis
 
 Here is a step-by-step look at how the app breaks down a financial chart. It identifies the overall bearish trend, points out the key resistance levels, and provides a final outlook based on the indicators it sees.
 
@@ -70,8 +82,5 @@ Here is a step-by-step look at how the app breaks down a financial chart. It ide
 *Identifying Key Resistance & Support Levels*
 ![Stock Chart Key Levels](assets/stock-chart-2.png)
 
-*Interpreting Indicators*
-![Stock Chart Indicators](assets/stock-chart-3.png)
-
-*Final Summary and Outlook*
-![Stock Chart Summary](assets/stock-chart-4.png)
+*Interpreting Indicators and Final Summary*
+![Stock Chart Indicators and Summary](assets/stock-chart-3.png)
