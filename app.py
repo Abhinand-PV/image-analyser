@@ -10,17 +10,17 @@ MODEL_ID = "gemini-2.5-flash"
 
 # Configure the page layout and title
 st.set_page_config(
-    page_title="Image Intelligence",
+    page_title="Intelligent image classification and analysis",
     page_icon="🔍",
     layout="wide"
 )
-st.title("Image Intelligence")
-st.caption("Powered by Google Gemini 2.5 Flash")
+st.title("Intelligent image classification and analysis")
+st.caption("Powered using Gemini 2.5 Flash")
 
 # Sidebar lets users pick an analysis mode
 mode = st.sidebar.radio(
     "Analysis Mode",
-    ["Image Description"]
+    ["Image Description","Structured Data Extraction","Stock Chart Analysis"]
 )
 # Store prompts in a dictionary keyed by mode name
 PROMPTS = {
@@ -28,6 +28,24 @@ PROMPTS = {
         "Analyze this image in detail. Describe what you see including objects, "
         "people, colors, setting, mood, any text visible, and notable details. "
         "Provide a comprehensive, well-organized description."
+    ),
+    "Structured Data Extraction": (
+        "Extract all structured data from this image and return it as JSON. "
+        "If it is a receipt, extract: store_name, date, items (each with name, "
+        "quantity, price), subtotal, tax, total. "
+        "If it is a business card, extract: name, title, company, email, phone, "
+        "address, website. "
+        "If it is another document type, extract all relevant fields. "
+        "Return only valid JSON with no additional text."
+    ),
+    "Stock Chart Analysis": (
+        "You are a technical analyst. Analyze this stock chart image and provide:\n"
+        "1. **Trend**: Overall trend direction (bullish, bearish, or sideways) and reasoning\n"
+        "2. **Patterns**: Any chart patterns visible (e.g., head and shoulders, double top/bottom, triangles, flags)\n"
+        "3. **Key Levels**: Support and resistance levels you can identify\n"
+        "4. **Indicators**: Any visible technical indicators and what they suggest (moving averages, RSI, MACD, volume)\n"
+        "5. **Summary**: A brief overall assessment and potential outlook\n\n"
+        "Base your analysis only on what is visible in the chart image."
     ),
 }
 
@@ -53,16 +71,36 @@ if uploaded_file is not None:
         with st.spinner("Analyzing image..."):
             prompt = PROMPTS[mode]
 
-            # Send the image and prompt to Gemini
-            response = client.models.generate_content(
-                model=MODEL_ID,
-                contents=[
-                    types.Part.from_bytes(data=image_bytes, mime_type=uploaded_file.type),
-                    prompt,
-                ],
-            )
+            if mode == "Structured Data Extraction":
+                response = client.models.generate_content(
+                    model=MODEL_ID,
+                    contents=[
+                        types.Part.from_bytes(data=image_bytes, mime_type=uploaded_file.type),
+                        prompt,
+                    ],
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json"
+                    ),
+                )
+            else:
+                response = client.models.generate_content(
+                    model=MODEL_ID,
+                    contents=[
+                        types.Part.from_bytes(data=image_bytes, mime_type=uploaded_file.type),
+                        prompt,
+                    ],
+                )
+
 
             # Display the AI's description as formatted markdown
-            st.markdown(response.text)
+            if mode == "Structured Data Extraction":
+                import json
+                try:
+                    data = json.loads(response.text)
+                    st.json(data)
+                except json.JSONDecodeError:
+                    st.code(response.text, language="json")
+            else:
+                st.markdown(response.text)
 else:
     st.info("Upload an image to get started. Select an analysis mode from the sidebar.")
