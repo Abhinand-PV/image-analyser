@@ -1,80 +1,68 @@
 # Intelligent Image Classification and Analysis
 
-A powerful web application that leverages the Google Gemini 2.5 Flash model to provide advanced image analysis capabilities. Built with Streamlit, this tool allows users to upload images and extract meaningful insights across various domains, ranging from general descriptions to structured data extraction and technical stock chart analysis.
+Welcome to the Intelligent Image Classification and Analysis tool! This project is a Streamlit web application that uses the Google Gemini 2.5 Flash model to help you understand and extract insights from your images. Whether you want a quick description, need to pull structured data from a receipt, or want a technical breakdown of a stock chart, this tool has you covered.
 
-## Features
+## What It Does
 
-- **Image Description**: Generates comprehensive, well-organized descriptions of uploaded images, detailing objects, people, colors, setting, mood, and visible text.
-- **Structured Data Extraction**: Automatically identifies and extracts relevant structured data (e.g., from receipts or business cards) and outputs it in a clean JSON format.
-- **Stock Chart Analysis**: Acts as a technical analyst to evaluate stock chart images, identifying overall trends, patterns, key support/resistance levels, and technical indicators.
+- **Image Description**: Upload any picture, and the app will give you a detailed breakdown of what's in it—from the people and objects to the overall mood and setting.
+- **Structured Data Extraction**: Tired of manually typing out receipts or business cards? This feature automatically grabs the important details and neatly formats them into JSON for you.
+- **Stock Chart Analysis**: If you're looking at a financial chart and want a second opinion, this feature acts like your personal technical analyst. It spots trends, recognizes chart patterns, identifies key support and resistance levels, and reads technical indicators for you.
 
-## Technologies Used
+## How We Built It
 
-- **Python 3**
-- **Streamlit**: For the interactive web interface.
-- **Google GenAI SDK**: For seamless integration with the Gemini 2.5 Flash model.
+- **Python 3**: The core language powering the logic.
+- **Streamlit**: Used to create a clean, interactive web interface so you don't have to use the command line.
+- **Google GenAI SDK**: The bridge that connects our app to the Gemini 2.5 Flash model.
 
-## Prerequisites
+## Getting Started
 
-Before running the application, ensure you have the following installed:
-- Python 3.8 or higher
-- A valid Google Gemini API key
+To get this running on your own machine, you'll need Python 3.8 or higher and a Google Gemini API key.
 
-## Installation
-
-1. **Clone the repository:**
+1. **Clone the project:**
    ```bash
    git clone https://github.com/Abhinand-PV/image-analyser.git
    cd image-analyser
    ```
 
-2. **Create a virtual environment (optional but recommended):**
+2. **Set up a virtual environment (recommended):**
    ```bash
    python -m venv .venv
-   source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+   source .venv/bin/activate  # If you're on Windows, use: .venv\Scripts\activate
    ```
 
-3. **Install the dependencies:**
+3. **Install the required packages:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Configure your API Key:**
-   Create a `.streamlit/secrets.toml` file in the project root and add your Gemini API key:
+4. **Add your API Key:**
+   Create a `.streamlit/secrets.toml` file in the main folder and add your Gemini API key like this:
    ```toml
    GEMINI_API_KEY = "your-api-key-here"
    ```
-   Alternatively, you can configure your environment variables depending on your deployment setup.
 
-## Usage
+## Running the App
 
-Run the Streamlit application using the following command:
+Just run this command in your terminal:
 ```bash
 streamlit run app.py
 ```
 
-Once the server is running, navigate to the local URL provided in your terminal (typically `http://localhost:8501`). Use the sidebar to select your desired analysis mode, upload an image, and view the generated insights.
+Your browser should automatically open to `http://localhost:8501`. From there, use the sidebar to pick what you want to do, upload your image, and let the app handle the rest!
 
-## Deep Dive: Stock Chart Analysis Feature
+## See It in Action
 
-The Stock Chart Analysis feature transforms the application into an automated technical analyst. By simply uploading an image of any financial chart, the application utilizes the Gemini 2.5 Flash model to instantly evaluate and provide:
-- **Trend Analysis**: Determines if the current trend is bullish, bearish, or sideways, backed by visible evidence.
-- **Chart Patterns**: Recognizes classical formations such as double tops, head and shoulders, or flags.
-- **Key Levels**: Identifies critical support and resistance zones.
-- **Technical Indicators**: Interprets visible signals like volume spikes or moving averages.
-- **Comprehensive Summary**: Synthesizes the findings into a clear overall outlook.
+*(Note: The images below use standard Markdown formatting to render as actual pictures on GitHub. For them to show up instead of appearing as broken links, please ensure you save your screenshot files into an `assets` folder in this repository before pushing!)*
 
-## Screenshots
-
-**1. Application Interface**
+### 1. The Main Interface
 ![Application Interface](assets/interface-screenshot.png)
 
-**2. Structured Data Extraction Example**
+### 2. Extracting Data from Documents
 ![Structured Data Extraction](assets/data-extraction-screenshot.png)
 
-**3. Stock Chart Analysis in Action**
+### 3. Deep Dive: Stock Chart Analysis
 
-Below is a complete breakdown of the technical analysis produced by the application:
+Here is a step-by-step look at how the app breaks down a financial chart. It identifies the overall bearish trend, points out the key resistance levels, and provides a final outlook based on the indicators it sees.
 
 *Uploading the Chart & Trend Analysis*
 ![Stock Chart Trend Analysis](assets/stock-chart-1.png)
