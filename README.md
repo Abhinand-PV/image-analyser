@@ -8,11 +8,11 @@ Welcome to the Intelligent Image Classification and Analysis tool! This project 
 - **Structured Data Extraction**: Tired of manually typing out receipts or business cards? This feature automatically grabs the important details and neatly formats them into JSON for you.
 - **Stock Chart Analysis**: If you're looking at a financial chart and want a second opinion, this feature acts like your personal technical analyst. It spots trends, recognizes chart patterns, identifies key support and resistance levels, and reads technical indicators for you.
 
-## How We Built It
+## How I Built It
 
 - **Python 3**: The core language powering the logic.
 - **Streamlit**: Used to create a clean, interactive web interface so you don't have to use the command line.
-- **Google GenAI SDK**: The bridge that connects our app to the Gemini 2.5 Flash model.
+- **Google GenAI SDK**: The bridge that connects my app to the Gemini 2.5 Flash model.
 
 ## Getting Started
 
