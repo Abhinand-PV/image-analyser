@@ -1,18 +1,18 @@
 # Intelligent Image Classification and Analysis
 
-Welcome to the Intelligent Image Classification and Analysis tool! This project is a Streamlit web application that uses the Google Gemini 2.5 Flash model to help you understand and extract insights from your images. Whether you want a quick description, need to pull structured data from a receipt, or want a technical breakdown of a stock chart, this tool has you covered.
+I built this project because I wanted to explore what's possible when you combine a solid vision model with a simple, clean interface. The idea was straightforward — drop in an image and get something genuinely useful back, whether that's a description, structured data pulled from a document, or a technical read on a stock chart. It's powered by Gemini 2.5 Flash under the hood and built with Streamlit to keep things accessible.
 
 ## What It Does
 
-- **Image Description**: Upload any picture, and the app will give you a detailed breakdown of what's in it—from the people and objects to the overall mood and setting.
-- **Structured Data Extraction**: Tired of manually typing out receipts or business cards? This feature automatically grabs the important details and neatly formats them into JSON for you.
-- **Stock Chart Analysis**: If you're looking at a financial chart and want a second opinion, this feature acts like your personal technical analyst. It spots trends, recognizes chart patterns, identifies key support and resistance levels, and reads technical indicators for you.
+- **Image Description**: Upload any image and get a detailed breakdown of what's in it — objects, people, setting, mood, visible text, all of it.
+- **Structured Data Extraction**: Point it at a receipt or a document and it pulls out the relevant fields and returns them as clean JSON. No manual typing, no reformatting.
+- **Stock Chart Analysis**: Upload a chart and the app reads it like a technical analyst would — trend direction, chart patterns, key support and resistance levels, and a summary of what the indicators suggest.
 
 ## How I Built It
 
-- **Python 3**: The core language powering the logic.
-- **Streamlit**: Used to create a clean, interactive web interface so you don't have to use the command line.
-- **Google GenAI SDK**: The bridge that connects my app to the Gemini 2.5 Flash model.
+- **Python 3**: The backbone of the whole thing.
+- **Streamlit**: Kept the interface simple and interactive without needing a full frontend setup.
+- **Google GenAI SDK**: Handles communication with the Gemini 2.5 Flash model for all the analysis.
 
 ## Getting Started
 
