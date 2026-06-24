@@ -1,6 +1,13 @@
 # Intelligent Image Classification and Analysis
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://image-analyserbyabhinandpv.streamlit.app/)
+
 I built this project because I wanted to explore what's possible when you combine a solid vision model with a simple, clean interface. The idea was straightforward — drop in an image and get something genuinely useful back, whether that's a description, structured data pulled from a document, or a technical read on a stock chart. It's powered by Gemini 2.5 Flash under the hood and built with Streamlit to keep things accessible.
+
+## 🚀 Live Demo
+
+The app is deployed and ready to use — no setup required:
+👉 **[https://image-analyserbyabhinandpv.streamlit.app/](https://image-analyserbyabhinandpv.streamlit.app/)**
 
 ## What It Does
 
